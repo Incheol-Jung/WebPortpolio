@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>portfolio</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<!--<link rel="stylesheet" href="font/ ">-->
+<link rel="stylesheet" href="css/main.css">
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<!-- google api -->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+</head>
+<body>
+
+<!-- header -->
+<header>
+	<div>
+		<h1><a href="index.html"><img src="images/logo.png" alt="" /></a></h1>
+		<ul class="infolink">
+			<li><a href="#">login</a></li>
+			<li><a href="#">sign In</a></li>
+			<li><a href="#">my</a></li>
+		</ul>
+		
+		<nav>
+			<ul>
+				<li class="active"><a href="sub1.html">sub1</a></li>
+				<li><a href="sub2.html">sub2</a></li>
+				<li><a href="#">sub3</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<!-- //header -->
+
+<!-- wrapper -->
+<div class="wrapper">	
+	
+	<!-- main -->
+	<main><!-- content-main/secondary-main -->
+	
+	
+		<div class="module profile-photo">
+			<div>
+				<img src="images/profile-bgphoto.png" alt="" />
+			</div>
+			<div>
+				my name is....??
+			</div>
+			<div>
+				Lorem ipsum dolor sit amet, per ei veri falli timeam, quo clita copiosae ea, eirmod utamur liberavisse ei vim. Et sit impetus euismod, est putant deserunt postulant cu. Ei prodesset omittantur his, mei no alii propriae. Sumo esse timeam eu his, pri ad novum veritus fabellas. Ipsum libris cu nam.
+			</div>
+		</div>
+
+		<div class="profile-desctab">
+
+			<div>
+
+			  <!-- bs tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active">
+			    	<a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a>
+			    </li>
+			    <li role="presentation">
+			    	<a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a>
+			    </li>
+			    <li role="presentation">
+			    	<a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a>
+			    </li>
+			    <li role="presentation">
+			    	<a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a>
+			    </li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="home">
+			    	<div>
+			    		<p><img src="images/01.jpg" alt="" /></p>
+			    		<div>text ......</div>
+			    	</div>
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="profile">2</div>
+			    <div role="tabpanel" class="tab-pane" id="messages">3</div>
+			    <div role="tabpanel" class="tab-pane" id="settings">4</div>
+			  </div>
+
+			</div>
+			<!-- bs tab -->
+
+		</div>
+
+
+		<div class="module profile-graph">
+			<h2>My graph</h2>
+			<div id="barchart_values"></div>
+		</div>
+
+		<div class="module profile-etcbox">
+			<h2>etc box contents</h2>
+			<div>text ......</div>
+		</div>
+
+	</main>
+	<!-- //main -->
+
+</div>
+<!-- wrapper -->
+
+<footer>
+	<address>&copy;copyright 2016 reserved.</address>
+</footer>
+
+<!-- js tab -->
+<script type="text/javascript">
+$('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>
+
+<!-- js bargraph -->
+<script type="text/javascript">
+google.load("visualization", "1", {packages:["corechart"]});
+google.setOnLoadCallback(drawChart);
+
+function drawChart() {
+   var data = google.visualization.arrayToDataTable([
+         ['Element', 'Density', { role: 'style' }],
+         ['New Items', 40.3, '#006cff'],            
+         ['Total Items', 100, '#77adfc'],           
+      ]);
+
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,
+				   { calc: "stringify",
+					 sourceColumn: 1,
+					 type: "string",
+					 role: "annotation" },
+				   2]);
+
+  var options = {
+	title: "bar title",
+	width: 700,
+	height: 100, //bar height change 
+	bar: {groupWidth: "95%"},
+	legend: { position: "none"},
+  };
+  var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+  chart.draw(view, options);
+}
+</script>
+
+</body>
+</html>
+
