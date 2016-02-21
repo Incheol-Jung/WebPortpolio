@@ -19,7 +19,7 @@ var AppShowcase = (function() {
 
 	function init() {
 		// show grid
-		$trigger.on( 'click', showGrid );
+		//$trigger.on( 'click', showGrid );
 		// when a grid´s screen is clicked, show the respective image on the device
 		$screens.on( 'click', function() {
 			showScreen( $( this ) );
