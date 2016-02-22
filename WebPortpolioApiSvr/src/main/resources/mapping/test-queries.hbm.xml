@@ -3,17 +3,23 @@
     "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
     
 <hibernate-mapping>
-	<query name="test.getTestList">	
-	<![CDATA[			
-		from Test as t 
-		ORDER BY t.testId desc		
+	<sql-query name="test.getTestListALL">	
+	<return alias="t" class="org.jij.WebPortpolio.model.Test" />
+	<![CDATA[	
+		SELECT t.*		
+		FROM TEST as t 
+		ORDER BY t.test_id DESC		
 	]]>
-	</query>	
-
-	<query name="test.getListDetail">
-
-	<![CDATA[
-		from Test as t WHERE t.testId = :testId
+	</sql-query>
+	
+	<sql-query name="test.getTestListDetail">	
+	<return alias="t" class="org.jij.WebPortpolio.model.Test" />
+	<![CDATA[	
+		SELECT t.*		
+		FROM TEST as t 
+		WHERE t.test_id = :testId
 	]]>
-	</query>
+	</sql-query>	
+
+	
 </hibernate-mapping>

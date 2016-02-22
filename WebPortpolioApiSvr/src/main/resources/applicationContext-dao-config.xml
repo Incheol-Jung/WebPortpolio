@@ -23,8 +23,7 @@
 			</list>
 		</property>
 		<property name="mappingResources">
-			<list>				
-				<value>mapping/country-queries.hbm.xml</value>			
+			<list>					
 				<value>mapping/test-queries.hbm.xml</value>
 			</list>
 		</property>
