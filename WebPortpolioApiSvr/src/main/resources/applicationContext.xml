@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	
+	<import resource="applicationContext-datasource.xml"/>
+	<import resource="applicationContext-dao-config.xml"/>
+		
+	<context:component-scan base-package="org.jij.WebPortpolio">
+		<context:include-filter type="regex"
+			expression="org\.jij\..*DAO.*" />
+		<context:include-filter type="regex"
+			expression="org\.jij\..*Service.*" />
+		<context:exclude-filter type="regex" 
+			expression="org\.jij\..*Controller.*" />	
+	</context:component-scan>
+
+	<!-- Properties -->
+	<bean id="properties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="classpath:/properties/project-data.xml" />
+		<property name="propertiesPersister" ref="propertiesPersister" />
+	</bean>
+	<bean name="propertiesPersister" class="org.jij.WebPortpolio.utils.SJCPropertiesPersister" /> 
+
+
+	
+	
+	<bean class="org.jij.WebPortpolio.utils.SjcExceptionResolver" />		
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	    <property name="driverClass" value="#{properties['db.driverClassName']}"/>
+	    <property name="jdbcUrl" value="#{properties['db.url']}"/>
+	    <property name="user" value="#{properties['db.username']}"/>
+	    <property name="password" value="#{properties['db.password']}"/>
+	    <property name="acquireIncrement" value="1" />
+	    <property name="acquireRetryAttempts" value="3"/>
+	    <property name="acquireRetryDelay" value="300" />
+	    <property name="initialPoolSize" value="#{properties['db.initSize']}" />
+	    <property name="maxPoolSize" value="#{properties['db.maxConSize']}" /> 
+	    <property name="minPoolSize" value="#{properties['db.minIdleSize']}" />
+	    <property name="maxIdleTime" value="60000" />
+	    <property name="checkoutTimeout" value="1000"/>
+	    <property name="idleConnectionTestPeriod" value="3000" />
+	    <property name="preferredTestQuery" value="SELECT 1" />	 
+	</bean>
+</beans>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xml-data>
+
+	<!-- Common Properties -->
+	<characterEncoding>UTF-8</characterEncoding>
+	<defaultLocale>en</defaultLocale>
+	
+	
+	
+	<db deploy="local">
+		<initSize>3</initSize>
+		<maxConSize>5</maxConSize>
+		<minIdleSize>3</minIdleSize>
+		<driverClassName>org.postgresql.Driver</driverClassName>
+		<url encrypt="false">jdbc:postgresql://127.0.0.1:5432/portpolioAPI</url>
+		<username encrypt="false">portjijj</username>
+		<password encrypt="false">!@#$1234qwer</password>		
+	</db>	
+	
+</xml-data>

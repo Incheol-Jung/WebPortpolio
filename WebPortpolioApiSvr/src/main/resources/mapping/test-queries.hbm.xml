@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping>
+	<query name="test.getTestList">	
+	<![CDATA[			
+		from Test as t 
+		ORDER BY t.testId desc		
+	]]>
+	</query>	
+
+	<query name="test.getListDetail">
+
+	<![CDATA[
+		from Test as t WHERE t.testId = :testId
+	]]>
+	</query>
+</hibernate-mapping>
