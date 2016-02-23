@@ -1,29 +1,16 @@
-
-/*$(function(){
-
-$('.fileupload_img').on('change', function () {
-    readURL($(this), this);
-});
-
-function readURL(current, input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-            current.closest('.ac-device').find('.item_image').attr('src', e.target.result);
-            /*var currentID = current.closest('.item_container').attr("name");
-            var nextID = parseInt(currentID) + 1;
-            $("[id$=hfImageUrl_" + currentID + "]").val(input.files[0].name);
-            $("[id$=hfUploadFlag_" + currentID + "]").val(1);
-            $(".item_container[name='" + nextID + "']").find('.delete_image').css('display', 'inline-block');
-            $(".item_container[name='" + nextID + "']").find('.slt_sort').removeAttr("disabled");
-            $(".item_container[name='" + nextID + "']").find('.fileupload_img').removeAttr("disabled");
-            SetFilelist();
+$(function(){
+    $('.btnSave').click(function(){
+        var i = 0;
+        var arrSrc = [];
+        var arrDes = [];
+        $('.page').each(function(){
+            arrSrc[i] = $(this).find('.imgapp').attr('src') == "images/upload.jpg" ? null : $(this).find('.imgapp').attr('src');
+            if($(this).find('.desapp').text()) arrDes[i] = $(this).find('.desapp').text();
+            else arrDes[i] = null;
+            i++;
+        })
+        for(var j=0; j<arrSrc.length; j++){
+            alert("description = "+arrDes[j] + "\n image src = "+ arrSrc[j]);
         }
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
+    }); 
 });
-
-*/
