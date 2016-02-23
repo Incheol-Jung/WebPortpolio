@@ -11,7 +11,7 @@
 		<spring.version>3.2.14.RELEASE</spring.version>
 		<slf4j.version>1.6.6</slf4j.version>
 		<log4j.version>1.2.14</log4j.version>
-		<hibernate.version>4.2.19.Final</hibernate.version>
+		<hibernate.version>4.3.0.Final</hibernate.version>
 		<junit.version>4.7</junit.version>
 		<org.aspectj.version>1.6.10</org.aspectj.version>
 		<jackson.version>2.4.4</jackson.version>
@@ -180,19 +180,9 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-c3p0</artifactId>
-			<version>${hibernate.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>com.mchange</artifactId>
-					<groupId>c3p0</groupId>
-				</exclusion>
-			</exclusions>
+			<version>${hibernate.version}</version>		
 		</dependency>
-		<dependency>
-			<groupId>com.mchange</groupId>
-			<artifactId>c3p0</artifactId>
-			<version>0.9.5</version>
-		</dependency>
+	
 
 
 		<!-- json -->
