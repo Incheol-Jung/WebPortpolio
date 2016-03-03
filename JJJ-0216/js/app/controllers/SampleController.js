@@ -19,19 +19,35 @@ angular.module('Sample').controller('SampleController', function($scope, SampleS
 	};
 
 	function getResultAll() {
+		console.log('getResultAll');
 		SampleService.getResultAll(function(result) {
 			console.log('result: ', JSON.stringify(result));
-			$scope.items = result.data.data.items;
-			$scope.totalItems = result.data.data.totalCount;
+			$scope.items = result.data.data;
+			//$scope.totalItems = result.data.data.totalCount;
 		});
 	};
-/*
-	function getResultsPage(pageNumber) {
-		SampleService.getResultsPage(7332, $scope.itemsPerPage, pageNumber, function(result) {
-			console.log('result: ', JSON.stringify(result));
-			$scope.items = result.data.data.items;
-			$scope.totalItems = result.data.data.totalCount;
-		});
-	};
-*/
+
 })
+	.controller('SampleDetailController', function($scope, SampleService) {
+		console.log($scope);
+		$scope.items = [];
+		console.log('Call SampleDetailController!!!');
+		getResultsPage(3);
+
+		$scope.pagination = {
+			current: 1
+		};
+
+		$scope.pageChanged = function(newPage) {
+			getResultsPage(newPage);
+		};
+
+		function getResultsPage(testId) {
+			SampleService.getResultsPage(testId, function(result) {
+				console.log('result: ', JSON.stringify(result));
+				$scope.items = result.data.data;
+				//$scope.totalItems = result.data.data.totalCount;
+			});
+		};
+
+	})
