@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Items</title>
+	<script src="js/angular.min.js"></script>
+	<script src="js/app/app.js"></script>
+</head>
+<body>
+	<div class="container" ng-controller="SampleController">
+		<table>
+			<tr dir-paginate="item in items | itemsPerPage: itemsPerPage" total-items="totalItems" current-page="pagination.current">
+				<td>{{ item.name }}</td>
+				<td>{{ item.brand }}</td>
+			</tr>
+		</table>
+
+		<dir-pagination-controls on-page-change="pageChanged(newPageNumber)"></dir-pagination-controls>
+	</div>
+	<script type="text/javascript" src="js/app/services/SampleService.js"></script>
+	<script type="text/javascript" src="js/app/controllers/SampleController.js"></script>
+
+</body>
+</html>
