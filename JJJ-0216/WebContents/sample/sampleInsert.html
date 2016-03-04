@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html data-ng-app="JJJPjt">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Items</title>
+	<script src="../../js/angular.js"></script>
+	<script src="../../js/app/app.js"></script>
+</head>
+<body>
+<div class="container" ng-controller="SampleInsertController">
+	<div>Sample Name :
+		<input type="text" id="sampleName" data-ng-model="sample.name">
+	</div>
+	<div>Sample Age :
+		<input type="text" id="sampleAge" data-ng-model="sample.age">
+	</div>
+	<div>Sample Active1 :
+		<input type="checkbox" id="sampleActive" data-ng-model="sample.active" />
+	</div>
+	<div>
+		<button data-ng-click="save()">Save</button>
+	</div>
+	<div>
+		<input type="text" id="sampleSuccess" data-ng-model="sample.success">
+	</div>
+</div>
+<script type="text/javascript" src="../../js/app/services/SampleService.js"></script>
+<script type="text/javascript" src="../../js/app/controllers/SampleController.js"></script>
+
+</body>
+</html>

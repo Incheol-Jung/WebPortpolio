@@ -14,6 +14,11 @@
 			<tr data-ng-repeat="item in items">
 				<td>{{ item.testId }}</td>
 				<td>{{ item.testName }}</td>
+				<td>
+					<!--button data-ng-click="sampleDetail(item.testId)">modify</button-->
+					<a data-ng-href="sampleDetail.html?sampleId={{item.testId}}">modify</a>
+					<button data-ng-click="sampleDelete(item.testId)">delete</button>
+				</td>
 			</tr>
 		</table>
 	</div>
