@@ -1,29 +1,31 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html data-ng-app="JJJPjt">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Items</title>
-	<script src="../../js/angular.js"></script>
-	<script src="../../js/app/app.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Items</title>
+    <script src="../../js/angular.js"></script>
+    <script src="../../js/angular-route.js"></script>
+    <script src="../../js/app/app.js"></script>
 </head>
 <body>
-	<div class="container" ng-controller="SampleController">
-		<table border="1">
-			<tr data-ng-repeat="item in items">
-				<td>{{ item.testId }}</td>
-				<td>{{ item.testName }}</td>
-				<td>
-					<!--button data-ng-click="sampleDetail(item.testId)">modify</button-->
-					<a data-ng-href="sampleDetail.html?sampleId={{item.testId}}">modify</a>
-					<button data-ng-click="sampleDelete(item.testId)">delete</button>
-				</td>
-			</tr>
-		</table>
-	</div>
-	<script type="text/javascript" src="../../js/app/services/SampleService.js"></script>
-	<script type="text/javascript" src="../../js/app/controllers/SampleController.js"></script>
+    <div class="container" ng-controller="SampleController">
+        <table border="1">
+            <tr data-ng-repeat="item in items">
+                <td>{{ item.testId }}</td>
+                <td>{{ item.testName }}</td>
+                <td>
+                    <!--button data-ng-click="sampleDetail(item.testId)">modify</button-->
+                    <a data-ng-href="#/sampleDetail/{{ item.testId }}">modify</a>
+                    <button data-ng-click="sampleDelete(item.testId)">delete</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <ng-view>Loading...</ng-view>
+    <script type="text/javascript" src="../../js/app/services/SampleService.js"></script>
+    <script type="text/javascript" src="../../js/app/controllers/SampleController.js"></script>
 
 </body>
 </html>

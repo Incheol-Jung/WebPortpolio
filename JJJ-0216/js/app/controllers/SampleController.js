@@ -38,13 +38,40 @@ angular.module('Sample')
 		});
 	}
 })
-.controller('SampleDetailController', function($scope, $location, SampleService) {
-		console.log($location);
+.controller('SampleDetailController', function ($scope, $location, SampleService, $routeParams, $route) {
+    console.log($location);
 
-	console.log($location.search().sampleId);
-	$scope.items = [];
-	console.log('Call SampleDetailController!!!');
-	getResultsPage(3);      //id 3번으로 고정해서 가져오고 있음.
+    console.log($location.search().sampleId);
+    console.log("dddddddddddddddddd === >" + $routeParams.testId);
+    $scope.items = [];
+    console.log('Call SampleDetailController!!!');
+    getResultsPage($routeParams.testId);      //id 3번으로 고정해서 가져오고 있음.
+    $scope.$on(
+        "$routeChangeSuccess",
+        function handleRouteChangeEvent(event) {
+            var current = $route.current;
+            console.log(
+                "ROUTE CHANGE: [ %s ] .. [ Path: %s ]",
+                current.originalPath,
+                $location.path()
+            );
+            //$location.path(current.action);
+            // If the current route doesn't contain an action, then it will,
+            // in all likelihood, be redirected to another route that does
+            // contain a valid action (configured in $routeProvider).
+            // --
+            // NOTE: This is not a native part of routing - this is because
+            // my route object contains an "action" key in the configuration
+            // in all cases in which a valid route is matched.
+            if (!current.action) {
+                console.warn("Route does not contain an action.");
+            }
+            // Store our current action for output.
+            $scope.routeAction = current.action;
+        }
+    );
+
+    
 
 	function getResultsPage(testId) {
 		SampleService.getResultsPage(testId, function(result) {

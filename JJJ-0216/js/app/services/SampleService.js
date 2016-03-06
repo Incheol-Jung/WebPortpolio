@@ -2,8 +2,8 @@
  * Created by sjc on 2016-03-03.
  */
 app.service('SampleService', function($http) {
-	//var apiUrl = "http://183.99.40.77:8282/WebPortpolioApiSvr";
-	var apiUrl = "http://localhost:10001/WebPortpolioApiSvr";
+	var apiUrl = "http://183.99.40.77:8282/WebPortpolioApiSvr";
+	//var apiUrl = "http://localhost:10001/WebPortpolioApiSvr";
 	this.getResultAll = function(callback) {
 		var url = apiUrl + "/TestRead";
 		console.log('url: ', url);
