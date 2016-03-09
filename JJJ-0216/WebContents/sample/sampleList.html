@@ -10,7 +10,7 @@
     <script src="../../js/app/app.js"></script>
 </head>
 <body>
-    <div class="container" ng-controller="SampleController">
+    <div class="container" data-ng-controller="SampleController">
         <table border="1">
             <tr data-ng-repeat="item in items">
                 <td>{{ item.testId }}</td>
@@ -23,7 +23,6 @@
             </tr>
         </table>
     </div>
-    <ng-view>Loading...</ng-view>
     <script type="text/javascript" src="../../js/app/services/SampleService.js"></script>
     <script type="text/javascript" src="../../js/app/controllers/SampleController.js"></script>
 

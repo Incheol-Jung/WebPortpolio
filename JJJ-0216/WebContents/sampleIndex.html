@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-	<meta charset="UTF-8">
-	<title></title>
+﻿<!DOCTYPE html>
+<html data-ng-app="JJJPjt">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Items</title>
+    <script src="../js/angular.js"></script>
+    <script src="../js/angular-route.js"></script>
+    <script src="../js/app/app.js"></script>
 </head>
 <body>
-<h5>WebPortpolio</h5>
-
-
-<h2>1. Test</h2> <br/>
-<a href="http://localhost:63342/JJJ-0216/WebContents/sample/sampleInsert.html">1.1 Insert</a><br/>
-<a href="http://localhost:63342/JJJ-0216/WebContents/sample/sampleList.html">1.2 List. Update. Delete</a><br/>
-
-
-<br/>
+    <ng-view></ng-view>
+    <script type="text/javascript" src="../js/app/services/SampleService.js"></script>
+    <script type="text/javascript" src="../js/app/controllers/SampleController.js"></script>
 </body>
 </html>

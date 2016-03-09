@@ -12,8 +12,12 @@ var app =
     ).config(['$routeProvider',
         function ($routeProvider) {
             $routeProvider.
-            when('/sampleDetail/:testId', {
-                templateUrl: 'sampleDetail.html',
+            when('/', {
+                templateUrl: 'sample/sampleList.html',
+                controller: 'SampleController'
+            })
+            .when('/sampleDetail/:testId', {
+                templateUrl: 'sample/sampleDetail.html',
                 controller: 'SampleDetailController',
                 action: '/sampleDetail/:testId'
             })
